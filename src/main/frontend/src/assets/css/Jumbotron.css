@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'BlackHanSans-Regular'; src: url('../../assets/fonts/BlackHanSans-Regular.ttf') format('truetype');
+}
+
+.title {
+    font-family: BlackHanSans-Regular;
+    font-size: 10vw;
+    color: white;
+}
+
+.subtitle {
+    font-family: BlackHanSans-Regular;
+    font-size: 5vw;
+    color: white;
+}
+
+#jumbotron {
+    background-size: cover;
+    background-position: center;
+    height: 40vw;
+    display: grid;
+    place-items: center;
+    user-select:none
+}

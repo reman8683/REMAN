@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'BlackHanSans-Regular'; src: url('../../assets/fonts/BlackHanSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DoHyeon-Regular'; src: url('../../assets/fonts/DoHyeon-Regular.ttf') format('truetype');
+}
+
+.item-title {
+    font-family: BlackHanSans-Regular;
+    font-size: 5vw;
+
+}
+
+.item-description {
+    font-family: DoHyeon-Regular;
+    font-size: 4vw;
+    color: rgb(120, 120, 120);
+}
+
+.api-item {
+    width: 40vw;
+
+    vertical-align: middle;
+    text-align:center;
+
+    background-color : rgb(16, 16, 16);
+    border-radius: 5vw;
+
+    padding: 5vw;
+    margin: 2vw;
+
+    align-items: center;
+
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
+}
+
+.api-item:hover {
+    transform: scale(110%);
+}
+
+.api-list {
+    display: table;
+    padding: 5vw;
+
+    vertical-align: middle;
+    border-spacing: 3vw;
+
+    align-items: center;
+
+    user-select:none
+}
