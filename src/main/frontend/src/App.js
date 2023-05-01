@@ -5,6 +5,7 @@ import {BottomLinkList, Discord, Github, Instagram, Twitch, Youtube} from "./pag
 import Api from "./page/Api";
 import Program from "./page/Program";
 import NotFound from "./page/NotFound";
+import React from "react";
 
 function App() {
     return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import '../../assets/css/Navigation.css'
+import React from "react";
 import {BsInstagram, BsDiscord, BsGithub, BsTwitch, BsYoutube} from 'react-icons/bs'
 
 export function BottomLinkList() {
