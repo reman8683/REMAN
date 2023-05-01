@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "../../assets/css/Jumbotron.css";
 import loadingImage from "../../assets/images/loading.png";
-import React from "react";
 
 export default function Jumbotron(props) {
     const [thumbnail, setURL] = useState('');
