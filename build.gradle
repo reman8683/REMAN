@@ -39,3 +39,15 @@ sourceSets {
         }
     }
 }
+
+tasks {
+    processResources {
+        duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.INCLUDE
+    }
+}
+
+bootJar {
+    archiveBaseName = '-'
+    archiveFileName = 'REMAN.jar'
+    archiveVersion = '0.0.1'
+}
