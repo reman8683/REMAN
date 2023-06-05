@@ -18,7 +18,7 @@ export default function Program() {
             <header className="App-header">
                 <div className="api-list">
                     {ProgramList.map((data, index) =>
-                        <ListItem key={index} title={data.title} description={data.description}/>
+                        <ListItem key={index} origin={"program"} title={data.title} description={data.description}/>
                     )}
                 </div>
             </header>

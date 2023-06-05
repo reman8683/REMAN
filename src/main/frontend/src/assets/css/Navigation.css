@@ -1,7 +1,3 @@
-@font-face {
-    font-family: 'DoHyeon-Regular'; src: url('../../assets/fonts/DoHyeon-Regular.ttf') format('truetype');
-}
-
 nav {
     position: fixed;
     width: 100%;

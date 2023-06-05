@@ -2,7 +2,8 @@
   "program": [
     {
       "title": "추가예정",
-      "description": "Docs, Programs"
+      "description": "Docs, Programs",
+      "id": "docs"
     }
   ]
 }

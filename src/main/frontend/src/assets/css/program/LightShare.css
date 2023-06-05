@@ -1,0 +1,50 @@
+#drag-drop-file {
+    display: none;
+}
+
+#drag-drop-label {
+    font-family: BlackHanSans-Regular;
+
+    font-size: 1em;
+    cursor: pointer;
+
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5em;
+
+    width: 15em;
+    height: 15em;
+
+    max-height: 750px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drag-drop-field {
+    display: flex;
+}
+
+.drag-drop-button {
+    width: 100%;
+    margin-top: 0.4em;
+    color: white;
+    border-radius: 0.5em;
+}
+
+.drag-drop-button:hover {
+    color: white;
+    background-color: rgb(32, 32, 32);
+}
+
+#drag-file-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}

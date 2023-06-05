@@ -1,9 +1,13 @@
 import React from "react";
 import "../../assets/css/ApiItem.css"
+import {useNavigate} from "react-router-dom";
 
 export default function ListItem(props) {
+    const navigate = useNavigate()
     return (
-        <div className="api-item">
+        <div className="item" onClick={() => {
+            navigate("/" + props.origin + "/test/" + props.id);
+        }}>
             <span className="item-title">{props.title}</span>
             <br/>
             <span className="item-description">{props.description}</span>

@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'BlackHanSans-Regular'; src: url('assets/fonts/BlackHanSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DoHyeon-Regular'; src: url('assets/fonts/DoHyeon-Regular.ttf') format('truetype');
+}
+
 .App {
   text-align: center;
 }
@@ -11,4 +19,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

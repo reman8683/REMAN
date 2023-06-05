@@ -2,10 +2,12 @@ import './App.css';
 import {Route, Routes} from "react-router-dom";
 import Home from "./page/Home";
 import {BottomLinkList, Discord, Github, Instagram, Twitch, Youtube} from "./page/components/BottomLinkList";
+import PixivStealer from "./page/components/api/PixivStealer";
 import Api from "./page/Api";
 import Program from "./page/Program";
 import NotFound from "./page/NotFound";
 import React from "react";
+import LightShare from "./page/components/program/LightShare";
 
 function App() {
     return (
@@ -21,6 +23,10 @@ function App() {
                 <Route path="/github" element={<Github />} />
                 <Route path="/discord" element={<Discord />} />
                 <Route path="/instagram" element={<Instagram />} />
+
+                <Route path="/api/test/pixivstealer" element={<PixivStealer />}/>
+
+                <Route path="/program/lightshare" element={<LightShare />}/>
 
                 <Route path={"*"} element={<NotFound />}/>
             </Routes>

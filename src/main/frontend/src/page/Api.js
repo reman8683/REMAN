@@ -17,8 +17,8 @@ export default function Api() {
             <Navigation anchor={true}/>
             <header className="App-header">
                 <div className="api-list">
-                    {apiList.map((data, index) =>
-                        <ListItem key={index} title={data.title} description={data.description}/>
+                    {apiList.map(data =>
+                        <ListItem key={data.id} origin={"api"} id={data.id} title={data.title} description={data.description}/>
                     )}
                 </div>
             </header>

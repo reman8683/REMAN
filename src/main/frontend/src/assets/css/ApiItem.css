@@ -1,34 +1,30 @@
-@font-face {
-    font-family: 'BlackHanSans-Regular'; src: url('../../assets/fonts/BlackHanSans-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'DoHyeon-Regular'; src: url('../../assets/fonts/DoHyeon-Regular.ttf') format('truetype');
-}
-
 .item-title {
     font-family: BlackHanSans-Regular;
-    font-size: 5vw;
+    font-size: 200%;
+    white-space: pre-line;
 
 }
 
 .item-description {
     font-family: DoHyeon-Regular;
-    font-size: 4vw;
+    font-size: 100%;
     color: rgb(120, 120, 120);
 }
 
-.api-item {
+.item {
     width: 40vw;
+    max-width: 750px;
 
     vertical-align: middle;
     text-align:center;
 
     background-color : rgb(16, 16, 16);
-    border-radius: 5vw;
+    border-radius: 2em;
 
-    padding: 5vw;
-    margin: 2vw;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 
     align-items: center;
 
@@ -37,16 +33,16 @@
     transition-timing-function: cubic-bezier(0, 0.8, 0.2, 1);
 }
 
-.api-item:hover {
-    transform: scale(110%);
+.item:hover {
+    transform: scale(105%);
 }
 
 .api-list {
     display: table;
-    padding: 5vw;
+    padding: 5px;
 
     vertical-align: middle;
-    border-spacing: 3vw;
+    border-spacing: 3px;
 
     align-items: center;
 

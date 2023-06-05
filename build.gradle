@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.reman8683'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '17'
 
 configurations {
@@ -26,6 +26,11 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.json:json:20230227'
     implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'org.jsoup:jsoup:1.7.2'
+
+    implementation 'mysql:mysql-connector-java:8.0.33'
 }
 
 tasks.named('test') {
@@ -35,7 +40,8 @@ tasks.named('test') {
 sourceSets {
     main {
         resources {
-            srcDirs "src/main/resources", "src/main/configs"
+            srcDirs = ["$projectDir/src/main/resources"
+            ]
         }
     }
 }
@@ -51,3 +57,40 @@ bootJar {
     archiveFileName = 'REMAN.jar'
     archiveVersion = '0.0.1'
 }
+
+def frontendDir = "$projectDir/src/main/frontend"
+
+processResources {
+    dependsOn "copyReactBuildFiles"
+}
+
+task installReact(type: Exec) {
+    workingDir "$frontendDir"
+    inputs.dir "$frontendDir"
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+        commandLine "npm.cmd", "audit", "fix"
+        commandLine 'npm.cmd', 'install' }
+    else {
+        commandLine "npm", "audit", "fix" commandLine 'npm', 'install'
+    }
+}
+
+task buildReact(type: Exec) {
+    dependsOn "installReact"
+    workingDir "$frontendDir"
+    inputs.dir "$frontendDir"
+    group = BasePlugin.BUILD_GROUP
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+        commandLine "npm.cmd", "run-script", "build"
+    } else {
+        commandLine "npm", "run-script", "build"
+    }
+}
+
+task copyReactBuildFiles(type: Copy) {
+    dependsOn "buildReact"
+    from "$frontendDir/build"
+    into "$projectDir/src/main/resources/static"
+}
+

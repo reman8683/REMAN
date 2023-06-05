@@ -13,9 +13,10 @@ export default function Nav(props) {
         }, []);
 
         const handleScroll = () => {
-            if(window.scrollY >= Math.round(window.innerWidth * 40 / 100)) {
+            if(window.scrollY >= Math.round(window.innerHeight)) {
                 setScroll(true);
-            }else{
+            }
+            else {
                 setScroll(false);
             }
         };

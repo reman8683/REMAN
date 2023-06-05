@@ -14,7 +14,7 @@ export default function Home() {
             </Jumbotron>
             <header className="App-header">
                 <img src={Profile} className="App-logo" alt="logo" />
-                <p className="bold">레맨입니다</p>
+                <p className="bold-size-limit">레맨입니다</p>
             </header>
         </div>
     );

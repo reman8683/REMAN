@@ -1,19 +1,11 @@
-@font-face {
-    font-family: 'BlackHanSans-Regular'; src: url('../../assets/fonts/BlackHanSans-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'DoHyeon-Regular'; src: url('../../assets/fonts/DoHyeon-Regular.ttf') format('truetype');
-}
-
-.bold {
+.bold-size-limit {
     font-family: DoHyeon-Regular;
-    font-size: 10vw;
+    font-size: 50px;
 }
 
 .App-logo {
-    margin-top: 10vw;
-    height: 40vw;
+    margin-top: 10%;
     pointer-events: none;
-    user-select:none
+    user-select:none;
+    width: 200px;
 }
