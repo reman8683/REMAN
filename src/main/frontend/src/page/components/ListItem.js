@@ -6,7 +6,7 @@ export default function ListItem(props) {
     const navigate = useNavigate()
     return (
         <div className="item" onClick={() => {
-            navigate("/" + props.origin + "/test/" + props.id);
+            navigate("/" + props.origin + "/" + props.id);
         }}>
             <span className="item-title">{props.title}</span>
             <br/>

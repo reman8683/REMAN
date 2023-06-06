@@ -18,3 +18,12 @@
     place-items: center;
     user-select:none
 }
+
+@keyframes wave {
+    0% {
+        background-position-x: 500px;
+    }
+    100% {
+        background-position-x: -500px;
+    }
+}

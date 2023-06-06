@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation";
 export default function NotFound() {
     return (
         <div className="App">
-            <Navigation anchor={true}/>
+            <Navigation anchor={false}/>
             <Jumbotron
                 title={'NotFound'}
                 content={'페이지를 찾을 수 없습니다 :('}>

@@ -3,16 +3,21 @@ import Navigation from "../Navigation";
 import "../../../assets/css/ApiTester.css";
 import "../../../assets/css/ApiItem.css"
 import loadingImage from "../../../assets/images/loading.png";
+import {useGlitch} from "react-powerglitch";
 
 export default function PixivStealer() {
     const [text, setText] = useState('');
     const [image, setImage] = useState('');
-    const [clicked, setClicked] = useState(false);
+    const glitch = useGlitch(
+        {
+            playMode: "click",
+            glitchTimeSpan: false,
+            shake: {amplitudeX: 0, amplitudeY: 0},
+            slice: {count: 15, velocity: 6, minHeight: 0.02, maxHeight: 0.15, hueRotate: true}
+        });
 
     function summit() {
-        setClicked(true)
-        setImage("/api/pixivstealer/getimage?tag=" + text + "&unused-hash=" + new Date().getTime())
-        setTimeout(() => setClicked(false));
+        setImage("/api/pixivstealer/getimage?tag=" + text + "&unused-hash=" + new Date().getTime());
     }
 
     const onErrorImg = (e) => {
@@ -40,7 +45,7 @@ export default function PixivStealer() {
                         onChange={(e) => {setText(e.target.value)}}
                         value={text}
                     />
-                    <button className="api-button" onClick={summit}>입력</button>
+                    <button style={{width:"100%"}} className="api-button" ref={glitch.ref} onClick={summit}>입력</button>
                 </div>
             </header>
         </div>

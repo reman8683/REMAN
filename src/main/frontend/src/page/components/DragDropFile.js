@@ -2,8 +2,18 @@ import React, {useRef, useState} from 'react';
 import "../../assets/css/program/LightShare.css"
 import loadingImage from "../../assets/images/loading.png";
 import axios from "axios";
+import {useGlitch} from "react-powerglitch";
 
 export default function DragDropFile() {
+    const glitch = useGlitch(
+        {
+            playMode: "click",
+            glitchTimeSpan: false,
+            shake: {amplitudeX: 0, amplitudeY: 0},
+            slice: {count: 15, velocity: 6, minHeight: 0.02, maxHeight: 0.15, hueRotate: true}
+        });
+
+    //업로드 라벨
     const [urlFile, setUrlFile] = useState("");
     const [file, setFile] = useState(null);
 
@@ -50,16 +60,18 @@ export default function DragDropFile() {
 
         const formData = new FormData();
         formData.append('file', file);
-
-        axios.post('/lightshare/upload', formData)
-            .then((response) => {
-                console.log(response.data);
-                // 파일 업로드 성공 시 처리
-            })
-            .catch((error) => {
-                console.error(error);
-                // 파일 업로드 실패 시 처리
-            });
+        console.log(file)
+        if (file != null) {
+            axios.post('/lightshare/upload', formData)
+                .then((response) => {
+                    console.log(response.data);
+                    // 파일 업로드 성공 시 처리
+                })
+                .catch((error) => {
+                    console.error(error);
+                    // 파일 업로드 실패 시 처리
+                });
+        }
     };
 
     return (
@@ -76,7 +88,7 @@ export default function DragDropFile() {
                 </label>
                 {dragActive && <div id="drag-file-element" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div>}
             </div>
-            <button className="drag-drop-button" type="submit">업로드</button>
+            <button className="drag-drop-button" type="submit" ref={glitch.ref}>업로드</button>
         </form>
     );
 }

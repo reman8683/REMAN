@@ -1,12 +1,17 @@
 package com.reman8683.reman.controller.api.program.lightshare;
 
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.UUID;
 
 @RestController
 public class FileController {
@@ -16,6 +21,7 @@ public class FileController {
         if (!file.isEmpty()) {
             try {
                 System.out.println(file.getOriginalFilename());
+                //saveToFile(file, "/resource/lightshare/temp/");
                 return file.getOriginalFilename() + " uploaded successfully!";
             } catch (Exception e) {
                 e.printStackTrace();
@@ -26,9 +32,13 @@ public class FileController {
         }
     }
 
-    public static void saveToFile(byte[] bytes, String filePath) {
-        try (FileOutputStream fos = new FileOutputStream(filePath)) {
-            fos.write(bytes);
+    public static void saveToFile(MultipartFile file, String filePath) {
+        File upload = new File(filePath);
+        if(!upload.exists()) {
+            upload.mkdirs();
+        }
+        try (FileOutputStream fos = new FileOutputStream(filePath + UUID.randomUUID() + "-" + file.getOriginalFilename())) {
+            fos.write(file.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
