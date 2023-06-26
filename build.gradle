@@ -67,7 +67,7 @@ bootJar {
 def frontendDir = "$projectDir/src/main/frontend"
 
 processResources {
-    //dependsOn "copyReactBuildFiles"
+    dependsOn "copyReactBuildFiles"
 }
 
 task installReact(type: Exec) {
