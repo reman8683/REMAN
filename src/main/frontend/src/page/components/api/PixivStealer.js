@@ -45,7 +45,7 @@ export default function PixivStealer() {
                         onChange={(e) => {setText(e.target.value)}}
                         value={text}
                     />
-                    <button style={{width:"100%"}} className="api-button" ref={glitch.ref} onClick={summit}>입력</button>
+                    <button style={{width:"100%", display:"flex"}} className="api-button" ref={glitch.ref} onClick={summit}>입력</button>
                 </div>
             </header>
         </div>

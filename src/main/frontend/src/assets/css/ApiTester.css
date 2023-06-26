@@ -44,6 +44,12 @@
     width: 19%;
 }
 
+abbr {
+    font-family: DoHyeon-Regular;
+    text-decoration: none;
+    font-size: 90%;
+}
+
 button {
     height: 2em;
 
@@ -57,9 +63,7 @@ button {
 
     solid: white;
     outline-style: none;
-    float: left;
 
-    display : flex;
     justify-content : center;
     align-items : center;
 
@@ -70,4 +74,13 @@ button {
 .api-button:hover {
     color: white;
     background-color: rgb(32, 32, 32);
+}
+
+.react-calendar__tile {
+    border-radius: 0.1em;
+    border: 1px solid #202020;
+}
+
+.react-calendar__navigation {
+    display: compact;
 }

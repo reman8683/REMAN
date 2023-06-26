@@ -1,6 +1,11 @@
 {
   "api": [
     {
+      "title": "Get Meal from BusanEdu",
+      "description": "Neis API 대용으로 만든 API",
+      "id": "test/busan-edu-meal-info"
+    },
+    {
       "title": "Pixiv Stealer",
       "description": "픽시브 긁어오는 API",
       "id": "test/pixivstealer"

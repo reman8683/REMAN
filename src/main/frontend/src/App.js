@@ -10,6 +10,7 @@ import React from "react";
 import LightShare from "./page/components/program/LightShare";
 import Mod from "./page/list/Mod";
 import Repo from "./page/list/Repo";
+import BusanEduMealInfo from "./page/components/api/BusanEduMealInfo";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/discord" element={<Discord />} />
                 <Route path="/instagram" element={<Instagram />} />
 
+                <Route path="/api/test/busan-edu-meal-info" element={<BusanEduMealInfo />}/>
                 <Route path="/api/test/pixivstealer" element={<PixivStealer />}/>
 
                 <Route path="/program/lightshare" element={<LightShare />}/>

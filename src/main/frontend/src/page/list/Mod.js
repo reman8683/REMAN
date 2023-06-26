@@ -11,6 +11,7 @@ export default function Mod() {
                 setData(data);
             })
     }, []);
+
     return (
         <div className="main">
             <Navigation anchor={true}/>
