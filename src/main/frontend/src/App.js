@@ -3,11 +3,13 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./page/Home";
 import {BottomLinkList, Discord, Github, Instagram, Twitch, Youtube} from "./page/components/BottomLinkList";
 import PixivStealer from "./page/components/api/PixivStealer";
-import Api from "./page/Api";
-import Program from "./page/Program";
+import Api from "./page/list/Api";
+import Program from "./page/list/Program";
 import NotFound from "./page/NotFound";
 import React from "react";
 import LightShare from "./page/components/program/LightShare";
+import Mod from "./page/list/Mod";
+import Repo from "./page/list/Repo";
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
 
                 <Route path="/api" element={<Api />} />
                 <Route path="/program" element={<Program />} />
+                <Route path="/mod" element={<Mod />} />
+                <Route path="/repo" element={<Repo />} />
 
                 <Route path="/youtube" element={<Youtube />} />
                 <Route path="/twitch" element={<Twitch />} />

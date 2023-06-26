@@ -14,7 +14,7 @@ public class ThumbnailURLController {
     @GetMapping(value = "api/randomscreenshot", produces = MediaType.IMAGE_JPEG_VALUE)
     public byte[] getThumbnailURL() throws IOException {
         Resource[] images = Foobar.loadResources("com/reman8683/jumbotron/*.png");
-        Resource image = images[(int) Math.round(Math.random() * images.length) + 1];
+        Resource image = images[(int) Math.round(Math.random() * images.length)];
         return image.getContentAsByteArray();
     }
 
@@ -26,7 +26,8 @@ public class ThumbnailURLController {
         }
 
         static Resource[] loadResources(String pattern) throws IOException {
-            return ResourcePatternUtils.getResourcePatternResolver(resourceLoader).getResources(pattern);
+            Resource[] loadedResources = ResourcePatternUtils.getResourcePatternResolver(resourceLoader).getResources(pattern);
+            return loadedResources;
         }
     }
 }

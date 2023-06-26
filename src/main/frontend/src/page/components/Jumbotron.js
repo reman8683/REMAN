@@ -1,7 +1,6 @@
 import React from "react";
 import "../../assets/css/Jumbotron.css";
 import loadingImage from "../../assets/images/loading.png";
-import WaveAnimation from "./WaveAnimation";
 import {useGlitch} from "react-powerglitch";
 
 export default function Jumbotron(props) {
@@ -22,9 +21,6 @@ export default function Jumbotron(props) {
                 <br/>
                 <span className="subtitle">{props.content}</span>
             </div>
-            <WaveAnimation size={0.5} color={"rgb(32,32,32)"} opacity={1} animationDuration={"12s"} animationDirection={""}/>
-            <WaveAnimation size={0.5} color={"rgb(32,32,32)"} opacity={0.5} animationDuration={"28s"} animationDirection={""}/>
-            <WaveAnimation size={0.5} color={"rgb(32,32,32)"} opacity={0.75} animationDuration={"20s"} animationDirection={"reverse"}/>
         </div>
     );
 }

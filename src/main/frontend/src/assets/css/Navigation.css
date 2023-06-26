@@ -8,9 +8,10 @@ nav {
     color: white;
 
     font-family: DoHyeon-Regular;
-    font-size: 3.75vh;
+    font-size: 3.7vh;
 
-    user-select:none
+    user-select:none;
+    z-index: 1000;
 }
 
 nav > div {

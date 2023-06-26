@@ -1,12 +1,12 @@
 .title {
     font-family: BlackHanSans-Regular;
-    font-size: 10vw;
+    font-size: 7.5em;
     color: white;
 }
 
 .subtitle {
     font-family: BlackHanSans-Regular;
-    font-size: 5vw;
+    font-size: 3em;
     color: white;
 }
 
@@ -16,7 +16,7 @@
     height: 100vh;
     display: grid;
     place-items: center;
-    user-select:none
+    user-select:none;
 }
 
 @keyframes wave {

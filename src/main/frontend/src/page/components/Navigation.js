@@ -39,6 +39,16 @@ export default function Nav(props) {
                     Program
                     </NavLink>
                 </div>
+                <div>
+                    <NavLink to="/mod">
+                        Mod
+                    </NavLink>
+                </div>
+                <div>
+                    <NavLink to="/repo">
+                        Repo
+                    </NavLink>
+                </div>
                 <div></div>
             </nav>
         );
